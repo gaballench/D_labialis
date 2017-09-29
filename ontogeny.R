@@ -75,26 +75,15 @@ write.xlsx(relAnomalies, file = "Table 2.xls", row.names = FALSE)
 write.xlsx(larvaTable, file = "Table 3.xls", row.names = FALSE)
 write.xlsx(embryoTable, file = "Table 1.xls", row.names = FALSE)
 
-# gap in P1 variation barplot
+# gap in P1 percentages
 gaps <- c(Absent = length(grep("(1)", larvae$LTRF, fixed = TRUE)),
           Present = (length(larvae$LTRF) - length(grep("(1)", larvae$LTRF, fixed = TRUE))))/length(larvae$LTRF)*100
 
-### Figures
-
-# Symmetry barplot
+# A-2 symmetry percentages
 symmetry <- c(Asymmetric = sum(table(larvae$Asymmetry)[c("Left", "Right")]),
               Symmetric = unname(table(larvae$Asymmetry)[3]))/sum(table(larvae$Asymmetry))*100
 
-png(filename = "Figure 4.png", width = 700, height = 700)
-par(cex = 2,
-    oma = c(1, 1, 1, 1))
-barplot(symmetry,
-        main = "Asymmetry Variation in the A2 LTR",
-        ylab = "Percentage", 
-        ylim = c(0, 60),
-        width = 0.25,
-        )
-dev.off()
+### Figures
 
 # overall row vbariation multiplot
 # mar = margins for each plot
