@@ -66,14 +66,17 @@ embryoTable$Contrast <- gsub("LTRFCom", "LTRF Compact", embryoTable$Contrast)
 embryoTable$Rho <- round(as.numeric(embryoTable$Rho), digits = 4)
 embryoTable$p.value <- as.numeric(embryoTable$p.value)
 
+# concatenate both tables in order to reduce manuscript space
+generalCorTable <- rbind(embryoTable, larvaTable)
+generalCorTable <- data.frame(OntogeneticSet = c(rep("Embryos", times = 4), rep("Larvae", times = 4)),
+                              generalCorTable)
 # Table for anomaly frequencies
 anomalies <- read.csv("anomalies.csv", stringsAsFactors = FALSE)
 relAnomalies <- cbind(anomalies[, c(1, 2)], anomalies[, 3:8]/anomalies$n*100)
 
 # write tables to xls files
+write.xlsx(generalCorTable, file = "Table 1.xls", row.names = FALSE)
 write.xlsx(relAnomalies, file = "Table 2.xls", row.names = FALSE)
-write.xlsx(larvaTable, file = "Table 3.xls", row.names = FALSE)
-write.xlsx(embryoTable, file = "Table 1.xls", row.names = FALSE)
 
 # gap in P1 percentages
 gaps <- c(Absent = length(grep("(1)", larvae$LTRF, fixed = TRUE)),
