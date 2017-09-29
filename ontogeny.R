@@ -67,7 +67,7 @@ embryoTable$Rho <- round(as.numeric(embryoTable$Rho), digits = 4)
 embryoTable$p.value <- as.numeric(embryoTable$p.value)
 
 # Table for anomaly frequencies
-anomalies <- read.csv("~/Dropbox/Papers/Dendropsophus/data/anomalies.csv", stringsAsFactors = FALSE)
+anomalies <- read.csv("anomalies.csv", stringsAsFactors = FALSE)
 relAnomalies <- cbind(anomalies[, c(1, 2)], anomalies[, 3:8]/anomalies$n*100)
 
 # write tables to xls files
