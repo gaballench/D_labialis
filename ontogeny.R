@@ -92,7 +92,7 @@ symmetry <- c(Asymmetric = sum(table(larvae$Asymmetry)[c("Left", "Right")]),
 # mar = margins for each plot
 # oma = margins for the whole plot area
 # set par(cex = ) before plotting each element as overriding happens otherwise
-png(filename = "Figure 1.png", width = 1200, height = 1000, res = 170)
+tiff(filename = "Figure 1.tiff", width = 1200*1.5, height = 1000*1.5, res = 300)
 
 par(cex = 2, oma = c(5, 5, 3, 2), mar = c(1.5, 1.5, 1.5, 1.5) + 0.1)
 layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE))
