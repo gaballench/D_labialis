@@ -33,4 +33,4 @@ source("ontogeny.R")
 
 # References
 
-Ballen, G.A. in press. Tooth row variation in tadpoles of _Dendropsophus labialis_ (Anura: Hylidae: Dendropsophini) and the evolution of oral morphology in the genus. Caldasia XX(X):XX-XX.
+Ballen, G.A. 2018. Tooth row variation in tadpoles of *Dendropsophus labialis* (Anura: Hylidae: Dendropsophini) and the evolution of oral morphology in the genus. Caldasia 40(2):216-231.
